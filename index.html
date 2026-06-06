@@ -12,14 +12,17 @@
     <meta name="author" content="Dhanush S">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <style>
         .profile-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-}
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
         /* ═══════════════════════════════════════════
            DESIGN TOKENS — PROFESSIONAL WHITE THEME
         ═══════════════════════════════════════════ */
@@ -390,12 +393,16 @@
         }
 
         @keyframes float-orb {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translate(0, 0) scale(1);
             }
+
             33% {
                 transform: translate(25px, -15px) scale(1.03);
             }
+
             66% {
                 transform: translate(-15px, 10px) scale(0.97);
             }
@@ -438,10 +445,13 @@
         }
 
         @keyframes pulse-dot {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 1;
                 box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.4);
             }
+
             50% {
                 opacity: 0.8;
                 box-shadow: 0 0 0 6px rgba(5, 150, 105, 0);
@@ -590,6 +600,7 @@
             0% {
                 filter: hue-rotate(0deg);
             }
+
             100% {
                 filter: hue-rotate(360deg);
             }
@@ -682,9 +693,12 @@
         }
 
         @keyframes float-badge {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0);
             }
+
             50% {
                 transform: translateY(-6px);
             }
@@ -699,6 +713,7 @@
                 opacity: 0;
                 transform: translateY(25px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -1096,6 +1111,14 @@
             background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 40%, #e0f2fe 100%);
         }
 
+        .project-visual.servicenow-theme {
+            background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 40%, #fef3c7 100%);
+        }
+
+        .project-visual.azure-theme {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 40%, #c7d2fe 100%);
+        }
+
         .project-visual-icon {
             font-size: 52px;
             opacity: 0.7;
@@ -1146,6 +1169,38 @@
         .project-type-badge.ai {
             color: var(--accent-pink);
             border-color: rgba(219, 39, 119, 0.15);
+        }
+
+        .project-type-badge.servicenow {
+            color: #ea580c;
+            border-color: rgba(234, 88, 12, 0.15);
+        }
+
+        .project-type-badge.azure {
+            color: #2563eb;
+            border-color: rgba(37, 99, 235, 0.15);
+        }
+
+        .project-status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 10px;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 600;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1));
+            color: var(--accent-blue);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .project-status-badge .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            animation: pulse 2s infinite;
         }
 
         .project-body {
@@ -1685,12 +1740,12 @@
                 <span class="nav-logo-text">Dhanush S</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
                 <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#contact" class="nav-cta">Contact Me</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
@@ -1704,14 +1759,14 @@
     <!-- Mobile Navigation -->
     <div class="mobile-overlay" id="mobileOverlay"></div>
     <nav class="mobile-nav" id="mobileNav" style="position:fixed;">
-        <a href="#about">About</a>
         <a href="#expertise">Expertise</a>
-        <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
         <a href="#certifications">Certifications</a>
+        <a href="#skills">Skills</a>
         <a href="#achievements">Achievements</a>
+        <a href="#education">Education</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact Me</a>
     </nav>
 
@@ -1761,7 +1816,7 @@
                     <div class="profile-frame">
                         <div class="profile-initials">
                             <img src="profile.png" alt="Dhanush S" class="profile-image">
-                                                    </div>
+                        </div>
                         <div class="profile-float-badge top-right">
                             <span class="badge-icon">🤖</span> AI Engineer
                         </div>
@@ -1777,59 +1832,6 @@
         </div>
     </section>
 
-    <!-- ═══════════ ABOUT ═══════════ -->
-    <section id="about">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">// About Me</span>
-                <h2 class="section-title">Professional Summary</h2>
-                <div class="section-divider"></div>
-            </div>
-            <div class="about-grid">
-                <div class="about-text reveal">
-                    <p>
-                        I'm <strong>Dhanush S</strong>, currently working as an <strong>Associate Software Engineer
-                            at EY GDS, Coimbatore</strong>, since September 2025. My primary focus areas include
-                        Artificial Intelligence, AI Agent Development, ServiceNow, Cloud Technologies, Enterprise
-                        Automation, Software Engineering, and Digital Transformation Solutions.
-                    </p>
-                    <p>
-                        I am passionate about leveraging emerging technologies to build intelligent, scalable, and
-                        business-driven solutions that enhance productivity, automate complex workflows, and create
-                        meaningful business value. My expertise spans modern AI ecosystems, enterprise platforms,
-                        and full-stack development.
-                    </p>
-                    <p>
-                        With a strong combination of industry experience, academic achievement, and leadership
-                        capabilities, I aspire to contribute to cutting-edge technology initiatives, drive enterprise
-                        innovation, and build next-generation intelligent solutions that create lasting impact.
-                    </p>
-                </div>
-                <div class="about-highlights reveal">
-                    <div class="about-highlight-card glass">
-                        <div class="about-highlight-icon">🧠</div>
-                        <div class="about-highlight-title">AI & LLM Systems</div>
-                        <div class="about-highlight-desc">RAG, MCP, Agentic AI, Prompt Engineering</div>
-                    </div>
-                    <div class="about-highlight-card glass">
-                        <div class="about-highlight-icon">☁️</div>
-                        <div class="about-highlight-title">Cloud & Enterprise</div>
-                        <div class="about-highlight-desc">Azure AI Foundry, AWS, ServiceNow</div>
-                    </div>
-                    <div class="about-highlight-card glass">
-                        <div class="about-highlight-icon">💻</div>
-                        <div class="about-highlight-title">Full-Stack Dev</div>
-                        <div class="about-highlight-desc">Python, Java, C#, JavaScript, .NET</div>
-                    </div>
-                    <div class="about-highlight-card glass">
-                        <div class="about-highlight-icon">🏆</div>
-                        <div class="about-highlight-title">Award Winner</div>
-                        <div class="about-highlight-desc">3× SIH Hackathon Champion</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- ═══════════ EXPERTISE DOMAINS ═══════════ -->
     <section id="expertise">
@@ -1898,112 +1900,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ═══════════ SKILLS ═══════════ -->
-    <section id="skills">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">// Technical Arsenal</span>
-                <h2 class="section-title">Skills & Proficiency</h2>
-                <div class="section-divider"></div>
-            </div>
-            <div class="skills-grid">
-                <!-- Programming Languages -->
-                <div class="skill-category glass reveal">
-                    <div class="skill-category-title">
-                        <span class="skill-category-icon">⌨️</span> Programming Languages
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span class="skill-name">Python</span><span class="skill-percent">92%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill" data-width="92"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span class="skill-name">Java</span><span class="skill-percent">85%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span class="skill-name">JavaScript</span><span class="skill-percent">88%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill" data-width="88"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span class="skill-name">C# / ASP.NET</span><span class="skill-percent">80%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill green" data-width="80"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span class="skill-name">C++</span><span class="skill-percent">78%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill green" data-width="78"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span class="skill-name">SQL</span><span class="skill-percent">90%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill" data-width="90"></div></div>
-                    </div>
-                </div>
-
-                <!-- AI & ML -->
-                <div class="skill-category glass reveal">
-                    <div class="skill-category-title">
-                        <span class="skill-category-icon">🤖</span> AI & Machine Learning
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span class="skill-name">LLMs & RAG</span><span class="skill-percent">90%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill purple" data-width="90"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span class="skill-name">Agentic AI / MCP</span><span class="skill-percent">88%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill purple" data-width="88"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span class="skill-name">Prompt Engineering</span><span class="skill-percent">92%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill purple" data-width="92"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span class="skill-name">Azure AI Foundry</span><span class="skill-percent">85%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill purple" data-width="85"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span class="skill-name">Machine Learning</span><span class="skill-percent">82%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill purple" data-width="82"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span class="skill-name">Vector Databases</span><span class="skill-percent">80%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill purple" data-width="80"></div></div>
-                    </div>
-                </div>
-
-                <!-- Web & Cloud -->
-                <div class="skill-category glass reveal">
-                    <div class="skill-category-title">
-                        <span class="skill-category-icon">🌐</span> Web, Cloud & Enterprise
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span class="skill-name">ServiceNow</span><span class="skill-percent">88%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill orange" data-width="88"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span class="skill-name">HTML / CSS</span><span class="skill-percent">92%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill orange" data-width="92"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span class="skill-name">PHP / Web Dev</span><span class="skill-percent">82%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill orange" data-width="82"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span class="skill-name">API Integration</span><span class="skill-percent">85%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill orange" data-width="85"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span class="skill-name">Power BI / Analytics</span><span class="skill-percent">80%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill orange" data-width="80"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span class="skill-name">Database Design</span><span class="skill-percent">87%</span></div>
-                        <div class="skill-bar"><div class="skill-bar-fill orange" data-width="87"></div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ═══════════ EXPERIENCE TIMELINE ═══════════ -->
     <section id="experience">
         <div class="container">
@@ -2059,7 +1955,6 @@
             </div>
         </div>
     </section>
-
     <!-- ═══════════ PROJECTS ═══════════ -->
     <section id="projects">
         <div class="container">
@@ -2069,6 +1964,60 @@
                 <div class="section-divider"></div>
             </div>
             <div class="projects-grid">
+
+                <!-- Project 5: Gemini AI Incident Summarizer -->
+                <div class="project-card glass reveal">
+                    <div class="project-visual servicenow-theme">
+                        <div class="project-visual-pattern"></div>
+                        <span class="project-visual-icon">⚡</span>
+                        <span class="project-type-badge servicenow">ServiceNow / AI</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">AI-Powered Incident Summarizer — ServiceNow</h3>
+                        <p class="project-desc">
+                            Integrated Google Gemini API into the ServiceNow Incident Dashboard to enable intelligent
+                            incident summarization. A "Summarize" button on the incident page analyzes incident details
+                            and feedback table data using AI, generating concise issue summaries to accelerate
+                            resolution and improve decision-making.
+                        </p>
+                        <div class="project-stack">
+                            <span class="project-stack-tag">Gemini API</span>
+                            <span class="project-stack-tag">ServiceNow</span>
+                            <span class="project-stack-tag">REST API</span>
+                            <span class="project-stack-tag">AI Summarization</span>
+                            <span class="project-stack-tag">Incident Mgmt</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Azure AI Foundry Agent -->
+                <div class="project-card glass reveal">
+                    <div class="project-visual azure-theme">
+                        <div class="project-visual-pattern"></div>
+                        <span class="project-visual-icon">☁️</span>
+                        <span class="project-type-badge azure">Azure AI Foundry</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Azure AI Foundry — Intelligent Agent Creation</h3>
+                        <p class="project-desc">
+                            Building an AI agent using Azure AI Foundry platform for enterprise-grade intelligent
+                            automation. Leveraging Azure's AI orchestration, prompt flow design, and model deployment
+                            capabilities to create autonomous agents that streamline business processes and deliver
+                            contextual decision support.
+                        </p>
+                        <div class="project-stack">
+                            <span class="project-stack-tag">Azure AI Foundry</span>
+                            <span class="project-stack-tag">AI Agents</span>
+                            <span class="project-stack-tag">Prompt Flow</span>
+                            <span class="project-stack-tag">Model Deployment</span>
+                            <span class="project-stack-tag">Enterprise AI</span>
+                        </div>
+                        <div class="project-status-badge">
+                            <span class="status-dot"></span> In Progress
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Project 1: AI Agent Platform -->
                 <div class="project-card glass reveal">
                     <div class="project-visual ai-theme">
@@ -2117,28 +2066,7 @@
                     </div>
                 </div>
 
-                <!-- Project 3: Food Ordering -->
-                <div class="project-card glass reveal">
-                    <div class="project-visual web-theme">
-                        <div class="project-visual-pattern"></div>
-                        <span class="project-visual-icon">🍽️</span>
-                        <span class="project-type-badge">Web App</span>
-                    </div>
-                    <div class="project-body">
-                        <h3 class="project-title">Food Ordering Website</h3>
-                        <p class="project-desc">
-                            Full-stack food ordering platform with menu browsing, cart management, order tracking, and
-                            payment integration. Built with responsive design for seamless multi-device experience.
-                        </p>
-                        <div class="project-stack">
-                            <span class="project-stack-tag">HTML/CSS</span>
-                            <span class="project-stack-tag">JavaScript</span>
-                            <span class="project-stack-tag">PHP</span>
-                            <span class="project-stack-tag">MySQL</span>
-                            <span class="project-stack-tag">REST API</span>
-                        </div>
-                    </div>
-                </div>
+
 
                 <!-- Project 4: Network Marketing -->
                 <div class="project-card glass reveal">
@@ -2162,39 +2090,33 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Project 3: Food Ordering -->
+                <div class="project-card glass reveal">
+                    <div class="project-visual web-theme">
+                        <div class="project-visual-pattern"></div>
+                        <span class="project-visual-icon">🍽️</span>
+                        <span class="project-type-badge">Web App</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Food Ordering Website</h3>
+                        <p class="project-desc">
+                            Full-stack food ordering platform with menu browsing, cart management, order tracking, and
+                            payment integration. Built with responsive design for seamless multi-device experience.
+                        </p>
+                        <div class="project-stack">
+                            <span class="project-stack-tag">HTML/CSS</span>
+                            <span class="project-stack-tag">JavaScript</span>
+                            <span class="project-stack-tag">PHP</span>
+                            <span class="project-stack-tag">MySQL</span>
+                            <span class="project-stack-tag">REST API</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
-
-    <!-- ═══════════ EDUCATION ═══════════ -->
-    <section id="education">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">// Academic Background</span>
-                <h2 class="section-title">Education</h2>
-                <div class="section-divider"></div>
-            </div>
-            <div class="education-grid">
-                <div class="edu-card glass reveal">
-                    <div class="edu-icon">🎓</div>
-                    <div class="edu-degree">Master of Computer Applications</div>
-                    <div class="edu-specialization">Artificial Intelligence & Machine Learning</div>
-                    <div class="edu-college">Amrita Vishwa Vidyapeetham (Online)</div>
-                    <div class="edu-year">2025 — 2027</div>
-                    <span class="edu-badge">Currently Pursuing</span>
-                </div>
-                <div class="edu-card glass reveal">
-                    <div class="edu-icon">📚</div>
-                    <div class="edu-degree">Bachelor of Computer Applications</div>
-                    <div class="edu-specialization">Computer Science</div>
-                    <div class="edu-college">Sri Krishna Arts and Science College</div>
-                    <div class="edu-year">2022 — 2025</div>
-                    <span class="edu-badge">First Class with Distinction</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ═══════════ CERTIFICATIONS ═══════════ -->
     <section id="certifications">
         <div class="container">
@@ -2226,12 +2148,22 @@
                     </div>
                 </div>
                 <div class="cert-card glass reveal">
-                    <div class="cert-logo servicenow">🟩</div>
+                    <div class="cert-logo aws">🟧</div>
                     <div class="cert-info">
-                        <h4>Delta Certifications</h4>
-                        <p>ServiceNow</p>
+                        <h4>Microsoft Azure AI Foundry</h4>
+                        <p> Certification - Udemy</p>
                     </div>
                 </div>
+
+
+                <div class="cert-card glass reveal">
+                    <div class="cert-logo aws">🟧</div>
+                    <div class="cert-info">
+                        <h4>Azure Cloud Practitioner Essentials</h4>
+                        <p> Certification - Udemy</p>
+                    </div>
+                </div>
+
                 <div class="cert-card glass reveal">
                     <div class="cert-logo oracle">🟥</div>
                     <div class="cert-info">
@@ -2239,27 +2171,7 @@
                         <p>Oracle</p>
                     </div>
                 </div>
-                <div class="cert-card glass reveal">
-                    <div class="cert-logo microsoft">🟦</div>
-                    <div class="cert-info">
-                        <h4>Azure Data Fundamentals</h4>
-                        <p>Microsoft</p>
-                    </div>
-                </div>
-                <div class="cert-card glass reveal">
-                    <div class="cert-logo aws">🟧</div>
-                    <div class="cert-info">
-                        <h4>Cloud Practitioner Essentials</h4>
-                        <p>Amazon Web Services</p>
-                    </div>
-                </div>
-                <div class="cert-card glass reveal">
-                    <div class="cert-logo nptel">🟪</div>
-                    <div class="cert-info">
-                        <h4>Soft Skills & Personality Development</h4>
-                        <p>NPTEL</p>
-                    </div>
-                </div>
+
                 <div class="cert-card glass reveal">
                     <div class="cert-logo coursera">🟢</div>
                     <div class="cert-info">
@@ -2270,7 +2182,157 @@
             </div>
         </div>
     </section>
+    <!-- ═══════════ SKILLS ═══════════ -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">// Technical Arsenal</span>
+                <h2 class="section-title">Skills & Proficiency</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="skills-grid">
+                <!-- Programming Languages -->
+                <div class="skill-category glass reveal">
+                    <div class="skill-category-title">
+                        <span class="skill-category-icon">⌨️</span> Programming Languages
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Python</span><span
+                                class="skill-percent">92%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="92"></div>
+                        </div>
+                    </div>
 
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">JavaScript</span><span
+                                class="skill-percent">88%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name"> ASP.NET</span><span
+                                class="skill-percent">80%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill green" data-width="80"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">SQL</span><span
+                                class="skill-percent">90%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="90"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI & ML -->
+                <div class="skill-category glass reveal">
+                    <div class="skill-category-title">
+                        <span class="skill-category-icon">🤖</span> AI & Machine Learning
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">LLMs & RAG</span><span
+                                class="skill-percent">90%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill purple" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Agentic AI / MCP</span><span
+                                class="skill-percent">88%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill purple" data-width="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Prompt Engineering</span><span
+                                class="skill-percent">92%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill purple" data-width="92"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Azure AI Foundry</span><span
+                                class="skill-percent">85%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill purple" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Machine Learning</span><span
+                                class="skill-percent">82%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill purple" data-width="82"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Vector Databases</span><span
+                                class="skill-percent">80%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill purple" data-width="80"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web & Cloud -->
+                <div class="skill-category glass reveal">
+                    <div class="skill-category-title">
+                        <span class="skill-category-icon">🌐</span> Web, Cloud & Enterprise
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">ServiceNow</span><span
+                                class="skill-percent">88%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill orange" data-width="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Azure</span><span
+                                class="skill-percent">88%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill orange" data-width="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">HTML / CSS</span><span
+                                class="skill-percent">92%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill orange" data-width="92"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">PHP / Web Dev</span><span
+                                class="skill-percent">82%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill orange" data-width="82"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">API Integration</span><span
+                                class="skill-percent">85%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill orange" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Power BI / Analytics</span><span
+                                class="skill-percent">80%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill orange" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span class="skill-name">Database Design</span><span
+                                class="skill-percent">87%</span></div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill orange" data-width="87"></div>
+                        </div>
+                    </div>
+                </div>
+    </section>
     <!-- ═══════════ ACHIEVEMENTS ═══════════ -->
     <section id="achievements">
         <div class="container">
@@ -2331,7 +2393,88 @@
             </div>
         </div>
     </section>
+    <!-- ═══════════ EDUCATION ═══════════ -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">// Academic Background</span>
+                <h2 class="section-title">Education</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="education-grid">
+                <div class="edu-card glass reveal">
+                    <div class="edu-icon">🎓</div>
+                    <div class="edu-degree">Master of Computer Applications</div>
+                    <div class="edu-specialization">Artificial Intelligence & Machine Learning</div>
+                    <div class="edu-college">Amrita Vishwa Vidyapeetham (Online)</div>
+                    <div class="edu-year">2025 — 2027</div>
+                    <span class="edu-badge">Currently Pursuing</span>
+                </div>
+                <div class="edu-card glass reveal">
+                    <div class="edu-icon">📚</div>
+                    <div class="edu-degree">Bachelor of Computer Applications</div>
+                    <div class="edu-specialization">Computer Science</div>
+                    <div class="edu-college">Sri Krishna Arts and Science College</div>
+                    <div class="edu-year">2022 — 2025</div>
+                    <span class="edu-badge">First Class with Distinction</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- ═══════════ ABOUT ═══════════ -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">// About Me</span>
+                <h2 class="section-title">Professional Summary</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>
+                        I'm <strong>Dhanush S</strong>, currently working as an <strong>Associate Software Engineer
+                            at EY GDS, Coimbatore</strong>, since September 2025. My primary focus areas include
+                        Artificial Intelligence, AI Agent Development, ServiceNow, Cloud Technologies, Enterprise
+                        Automation, Software Engineering, and Digital Transformation Solutions.
+                    </p>
+                    <p>
+                        I am passionate about leveraging emerging technologies to build intelligent, scalable, and
+                        business-driven solutions that enhance productivity, automate complex workflows, and create
+                        meaningful business value. My expertise spans modern AI ecosystems, enterprise platforms,
+                        and full-stack development.
+                    </p>
+                    <p>
+                        With a strong combination of industry experience, academic achievement, and leadership
+                        capabilities, I aspire to contribute to cutting-edge technology initiatives, drive enterprise
+                        innovation, and build next-generation intelligent solutions that create lasting impact.
+                    </p>
+                </div>
+                <div class="about-highlights reveal">
+                    <div class="about-highlight-card glass">
+                        <div class="about-highlight-icon">🧠</div>
+                        <div class="about-highlight-title">AI &amp; LLM Systems</div>
+                        <div class="about-highlight-desc">RAG, MCP, Agentic AI, Prompt Engineering</div>
+                    </div>
+                    <div class="about-highlight-card glass">
+                        <div class="about-highlight-icon">☁️</div>
+                        <div class="about-highlight-title">Cloud &amp; Enterprise</div>
+                        <div class="about-highlight-desc">Azure AI Foundry, AWS, ServiceNow</div>
+                    </div>
+                    <div class="about-highlight-card glass">
+                        <div class="about-highlight-icon">💻</div>
+                        <div class="about-highlight-title">Full-Stack Dev</div>
+                        <div class="about-highlight-desc">Python, Java, C#, JavaScript, .NET</div>
+                    </div>
+                    <div class="about-highlight-card glass">
+                        <div class="about-highlight-icon">🏆</div>
+                        <div class="about-highlight-title">Award Winner</div>
+                        <div class="about-highlight-desc">3× SIH Hackathon Champion</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- ═══════════ CAREER VISION / CONTACT CTA ═══════════ -->
     <section id="contact">
         <div class="container">
