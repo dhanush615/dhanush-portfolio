@@ -1808,6 +1808,466 @@
                 grid-template-columns: 1fr;
             }
         }
+        /* ==========================================================================
+           PROFESSIONAL VIDEO DEMO MODAL & DEMO BUTTON STYLES
+           ========================================================================== */
+        
+        .btn-demo-trigger {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: #ffffff !important;
+            font-weight: 600;
+            font-size: 13.5px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-demo-trigger:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.45);
+            background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+        }
+
+        .btn-demo-trigger .play-icon-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-demo-trigger:hover .play-icon-wrap {
+            transform: scale(1.15);
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-demo-card {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 14px;
+            padding: 8px 14px;
+            background: rgba(37, 99, 235, 0.08);
+            color: var(--accent);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            border-radius: 6px;
+            font-size: 12.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-demo-card:hover {
+            background: var(--accent);
+            color: #ffffff;
+            border-color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        /* Modal Overlay & Backdrop */
+        /* ==========================================================================
+           PROFESSIONAL VIDEO DEMO MODAL & DEMO BUTTON STYLES
+           ========================================================================== */
+        
+        .btn-demo-trigger {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: #ffffff !important;
+            font-weight: 600;
+            font-size: 13.5px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-demo-trigger:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.45);
+            background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+        }
+
+        .btn-demo-trigger .play-icon-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-demo-trigger:hover .play-icon-wrap {
+            transform: scale(1.15);
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-demo-card {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 14px;
+            padding: 8px 14px;
+            background: rgba(37, 99, 235, 0.08);
+            color: var(--accent);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            border-radius: 6px;
+            font-size: 12.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-demo-card:hover {
+            background: var(--accent);
+            color: #ffffff;
+            border-color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        /* ==========================================================================
+           AUTHENTIC LINKEDIN POST MOCKUP POPUP OVERLAY (FIT-IN-VIEWPORT)
+           ========================================================================== */
+
+        .demo-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
+        }
+
+        .demo-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .demo-modal-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        /* Modal Container - Fits cleanly within viewport, zero inner scroll */
+        .demo-modal-container {
+            position: relative;
+            width: 100%;
+            max-width: 840px;
+            max-height: 94vh;
+            background: #1d2a3a; /* LinkedIn dark theme elevation */
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 16px;
+            box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.8), 0 0 35px rgba(37, 99, 235, 0.25);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.96) translateY(8px);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            color: #ffffff;
+        }
+
+        .demo-modal-overlay.active .demo-modal-container {
+            transform: scale(1) translateY(0);
+        }
+
+        /* Top Header Bar */
+        .demo-modal-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            background: #111827;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .demo-modal-live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #10b981;
+            text-transform: uppercase;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #10b981;
+            animation: pulseDot 1.8s infinite;
+        }
+
+        .demo-modal-close {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #94a3b8;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .demo-modal-close:hover {
+            background: rgba(239, 68, 68, 0.25);
+            border-color: rgba(239, 68, 68, 0.5);
+            color: #f87171;
+            transform: rotate(90deg);
+        }
+
+        /* Custom LinkedIn Post Card Mockup */
+        .linkedin-mockup-card {
+            display: flex;
+            flex-direction: column;
+            background: #1d2a3a;
+            padding: 16px 20px 14px;
+            gap: 12px;
+        }
+
+        /* Header Info */
+        .li-mockup-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .li-avatar-wrap {
+            position: relative;
+            width: 46px;
+            height: 46px;
+            flex-shrink: 0;
+        }
+
+        .li-avatar-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #2563eb;
+        }
+
+        .li-online-dot {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            width: 10px;
+            height: 10px;
+            background: #10b981;
+            border: 2px solid #1d2a3a;
+            border-radius: 50%;
+        }
+
+        .li-author-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .li-author-name {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .li-degree {
+            font-size: 11.5px;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        .li-author-headline {
+            font-size: 12px;
+            color: #cbd5e1;
+            line-height: 1.3;
+        }
+
+        .li-post-meta {
+            font-size: 11px;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Caption Text */
+        .li-mockup-content {
+            font-size: 13.5px;
+            line-height: 1.45;
+            color: #e2e8f0;
+        }
+
+        .li-post-text {
+            margin: 0;
+        }
+
+        .li-hashtags-row {
+            margin-top: 6px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .li-hashtag {
+            color: #60a5fa;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        /* Video Viewport */
+        .li-mockup-video-viewport {
+            width: 100%;
+            background: #000000;
+            border-radius: 10px;
+            overflow: hidden;
+            aspect-ratio: 16 / 9;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .li-video-wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .demo-video-element {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #000000;
+        }
+
+        /* Engagement Bar */
+        .li-mockup-footer {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-top: 6px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .li-stats-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 11.5px;
+            color: #94a3b8;
+        }
+
+        .li-actions-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .li-action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #cbd5e1;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .li-action-btn:hover {
+            background: rgba(37, 99, 235, 0.2);
+            color: #60a5fa;
+            border-color: rgba(37, 99, 235, 0.4);
+        }
+
+        .li-external-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            border-radius: 6px;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: #ffffff !important;
+            font-size: 12.5px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .li-external-cta-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
+        }
+
+        @media (max-width: 768px) {
+            .demo-modal-container {
+                max-height: 98vh;
+                border-radius: 12px;
+            }
+            .li-author-headline {
+                font-size: 11px;
+            }
+            .li-actions-row {
+                gap: 6px;
+            }
+            .li-action-btn {
+                padding: 4px 8px;
+                font-size: 11px;
+            }
+        }
     </style>
 </head>
 
@@ -2010,17 +2470,23 @@
                         efficiency.
                     </p>
                     <div class="hero-actions">
+                        <button class="btn-demo-trigger trigger-demo-modal" data-project-id="chatbot">
+                            <span class="play-icon-wrap">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </span>
+                            <span>Watch AI Demo Video</span>
+                        </button>
                         <a href="#projects" class="btn btn-primary btn-with-icon">
                             View AI Projects
                             <svg class="icon icon-sm" aria-hidden="true">
                                 <use href="#i-arrow-right" />
                             </svg>
                         </a>
-                        <a href="https://github.com/dhanushs615" target="_blank" rel="noopener" class="btn btn-secondary btn-with-icon">
+                        <a href="https://github.com/dhanush615/my_projects" target="_blank" rel="noopener" class="btn btn-secondary btn-with-icon">
                             <svg class="icon icon-sm" aria-hidden="true">
                                 <use href="#i-github" />
                             </svg>
-                            GitHub
+                            GitHub Projects
                         </a>
                         <a href="https://www.linkedin.com/in/dhanushs615/" target="_blank" rel="noopener"
                             class="btn btn-secondary btn-with-icon">
@@ -2151,15 +2617,23 @@
                             <p class="case-hook">Natural-language interface for querying ServiceNow incident data —
                                 built with LangChain, Ollama, and Streamlit for enterprise IT support teams.</p>
                         </div>
-                        <a href="https://www.linkedin.com/posts/dhanushs615_ai-generativeai-fullstackai-activity-7483228309833609216-yOuG"
-                            target="_blank" rel="noopener" class="case-link">
-                            View Post on LinkedIn
-                            <svg class="icon icon-sm" aria-hidden="true">
-                                <use href="#i-external" />
-                            </svg>
-                        </a>
+                        <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                            <button class="btn-demo-trigger trigger-demo-modal" data-project-id="chatbot">
+                                <span class="play-icon-wrap">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                </span>
+                                <span>Watch Video Demo</span>
+                            </button>
+                            <a href="https://www.linkedin.com/posts/dhanushs615_ai-generativeai-fullstackai-activity-7483228309833609216-yOuG"
+                                target="_blank" rel="noopener" class="case-link">
+                                View Post on LinkedIn
+                                <svg class="icon icon-sm" aria-hidden="true">
+                                    <use href="#i-external" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                    <div class="case-body-grid">
+                    <div class="case-body">
                         <div class="case-info">
                             <div class="case-block">
                                 <h4>What I Built</h4>
@@ -2190,13 +2664,10 @@
                                 <span class="stack-tag">RAG</span>
                             </div>
                         </div>
-                        <div class="linkedin-embed-wrap">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7483228211791986688?collapsed=1" height="541" width="504" frameborder="0" allowfullscreen="" title="Embedded post — Agentic AI Chatbot"></iframe>
-                        </div>
                     </div>
                 </article>
 
-                <!-- Project 2: Incident Intelligence Portal with LinkedIn Live Embed -->
+                <!-- Project 2: Incident Intelligence Portal -->
                 <article class="case-study featured reveal" data-category="ai enterprise">
                     <div class="case-header">
                         <div>
@@ -2210,15 +2681,23 @@
                                 automates incident analysis, contextual summaries, and intelligent recommendations for
                                 IT operations.</p>
                         </div>
-                        <a href="https://www.linkedin.com/posts/dhanushs615_servicenow-agenticai-react-activity-7430607131160059904-UmeB"
-                            target="_blank" rel="noopener" class="case-link">
-                            View Post on LinkedIn
-                            <svg class="icon icon-sm" aria-hidden="true">
-                                <use href="#i-external" />
-                            </svg>
-                        </a>
+                        <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                            <button class="btn-demo-trigger trigger-demo-modal" data-project-id="portal">
+                                <span class="play-icon-wrap">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                </span>
+                                <span>Watch Video Demo</span>
+                            </button>
+                            <a href="https://www.linkedin.com/posts/dhanushs615_servicenow-agenticai-react-activity-7430607131160059904-UmeB"
+                                target="_blank" rel="noopener" class="case-link">
+                                View Post on LinkedIn
+                                <svg class="icon icon-sm" aria-hidden="true">
+                                    <use href="#i-external" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                    <div class="case-body-grid">
+                    <div class="case-body">
                         <div class="case-info">
                             <div class="case-block">
                                 <h4>What I Built</h4>
@@ -2247,9 +2726,6 @@
                                 <span class="stack-tag">ITSM</span>
                             </div>
                         </div>
-                        <div class="linkedin-embed-wrap">
-                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7485044708474249216?collapsed=1" height="541" width="504" frameborder="0" allowfullscreen="" title="Embedded post — Incident Intelligence Portal"></iframe>
-                        </div>
                     </div>
                 </article>
             </div>
@@ -2272,6 +2748,10 @@
                     <div class="project-card-tags">
                         <span>Azure AI Foundry</span><span>AI Agents</span><span>Prompt Flow</span><span>RAG</span>
                     </div>
+                    <button class="btn-demo-card trigger-demo-modal" data-project-id="azure-ai">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <span>Watch Demo Video</span>
+                    </button>
                 </div>
                 <div class="project-card reveal" data-category="ai">
                     <div class="project-card-head">
@@ -2286,6 +2766,10 @@
                     <div class="project-card-tags">
                         <span>Python</span><span>ML</span><span>Pandas</span><span>Scikit-learn</span>
                     </div>
+                    <button class="btn-demo-card trigger-demo-modal" data-project-id="sentiment">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <span>Watch Demo Video</span>
+                    </button>
                 </div>
                 <div class="project-card reveal" data-category="automation">
                     <div class="project-card-head">
@@ -2300,6 +2784,10 @@
                     <div class="project-card-tags">
                         <span>Flutter</span><span>Android</span><span>REST API</span><span>Play Store</span>
                     </div>
+                    <button class="btn-demo-card trigger-demo-modal" data-project-id="mobile-app">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <span>Watch Demo Video</span>
+                    </button>
                 </div>
                 <div class="project-card reveal" data-category="enterprise automation">
                     <div class="project-card-head">
@@ -2314,6 +2802,10 @@
                     <div class="project-card-tags">
                         <span>JavaScript</span><span>PHP</span><span>MySQL</span><span>REST API</span>
                     </div>
+                    <button class="btn-demo-card trigger-demo-modal" data-project-id="food-app">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <span>Watch Demo Video</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -2708,6 +3200,7 @@
                 <div class="footer-links">
                     <a href="mailto:dhanussh05@gmail.com">Email</a>
                     <a href="https://www.linkedin.com/in/dhanushs615/" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://github.com/dhanush615/my_projects" target="_blank" rel="noopener">GitHub</a>
                     <a href="#projects">Projects</a>
                     <a href="#certifications">Certifications</a>
                 </div>
@@ -2718,6 +3211,61 @@
     <div id="emailToast" class="toast-notification">
         <svg class="icon icon-sm" aria-hidden="true"><use href="#i-check" /></svg>
         Email copied to clipboard: dhanussh05@gmail.com
+    </div>
+
+    <!-- Professional Video Demo Showcase Modal View (Single Unified Popup Overlay) -->
+    <div id="videoDemoModal" class="demo-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="demo-modal-backdrop" id="demoModalBackdrop"></div>
+        <div class="demo-modal-container">
+            <!-- Modal Top Bar Header -->
+            <div class="demo-modal-header">
+                <div class="demo-modal-title-wrap">
+                    <div class="demo-modal-live-badge">
+                        <span class="live-dot"></span>
+                        <span class="live-text">PRO AI DEMO SHOWCASE</span>
+                    </div>
+                    <h3 id="modalProjectTitle" class="demo-modal-title">Agentic AI Project Showcase</h3>
+                </div>
+                <button class="demo-modal-close" id="closeDemoModal" aria-label="Close modal">
+                    <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+
+            <!-- Modal Tech Stack Badges -->
+            <div class="demo-modal-tags" id="modalProjectTags">
+                <span class="modal-tag">Python</span>
+                <span class="modal-tag">LangChain</span>
+                <span class="modal-tag">ServiceNow</span>
+            </div>
+
+            <!-- Single Unified Video Viewport Container -->
+            <div class="demo-video-viewport">
+                <div id="demoVideoWrapper" class="demo-video-wrapper">
+                    <!-- Dynamic Video / LinkedIn Embed Player -->
+                </div>
+            </div>
+
+            <!-- Modal Footer Information & Actions -->
+            <div class="demo-modal-footer">
+                <div class="demo-modal-desc-col">
+                    <h4>About this Demo</h4>
+                    <p id="modalProjectDesc">Detailed overview of the Agentic AI implementation...</p>
+                    <div class="demo-features-list">
+                        <h4>Key Highlights Demonstrated:</h4>
+                        <ul id="modalProjectFeatures">
+                            <li>Interactive Streamlit UI for natural language queries</li>
+                            <li>LangChain & Ollama orchestration with RAG grounding</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="demo-modal-actions-col">
+                    <a id="modalLinkedinLink" href="https://www.linkedin.com/in/dhanushs615/" target="_blank" rel="noopener" class="btn btn-primary btn-with-icon demo-modal-btn">
+                        <span>View LinkedIn Demo Post</span>
+                        <svg class="icon icon-sm" aria-hidden="true"><use href="#i-external" /></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -2828,6 +3376,171 @@
                     }
                 });
             });
+        });
+
+        // ==========================================================================
+        // SINGLE UNIFIED POPUP OVERLAY LOGIC
+        // ==========================================================================
+        var projectsData = {
+            'chatbot': {
+                title: 'Agentic AI Chatbot for ServiceNow Incident Management',
+                tags: ['Python', 'LangChain', 'Ollama', 'Streamlit', 'ServiceNow', 'Prompt Engineering', 'RAG'],
+                description: 'Natural-language Streamlit interface powered by LangChain and Ollama (GPT-OSS 120B Cloud). Performs intelligent ServiceNow incident queries, root cause analysis, automated ticket summaries, and hallucination prevention.',
+                features: [
+                    'Interactive Streamlit UI for natural language ITSM queries',
+                    'LangChain orchestration with Ollama cloud LLM backend',
+                    'Automated root cause analysis & structured incident summaries',
+                    'Zero-hallucination prompt engineering & RAG guardrails'
+                ],
+                embedUrl: 'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7483228211791986688?collapsed=1',
+                videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+                linkedinUrl: 'https://www.linkedin.com/posts/dhanushs615_ai-generativeai-fullstackai-activity-7483228309833609216-yOuG'
+            },
+            'portal': {
+                title: 'Enterprise AI-Powered Incident Intelligence Portal',
+                tags: ['ServiceNow', 'Google Gemini API', 'Agentic AI', 'React', 'JavaScript', 'REST API'],
+                description: 'Full-stack Agentic AI portal integrated directly with ServiceNow using Google Gemini API. Automates incident investigation, contextual ticket summarization, and recommended resolution workflows for enterprise IT ops teams.',
+                features: [
+                    'ServiceNow REST API integration with Google Gemini LLM API',
+                    'Automated incident triage and contextual ticket summarization',
+                    'Reduces manual investigation time for incident analysts by 40%+',
+                    'Modern React frontend with real-time AI recommendations'
+                ],
+                embedUrl: 'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7485044708474249216?collapsed=1',
+                videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+                linkedinUrl: 'https://www.linkedin.com/posts/dhanushs615_servicenow-agenticai-react-activity-7430607131160059904-UmeB'
+            },
+            'azure-ai': {
+                title: 'Azure AI Foundry — Intelligent Agent Workflow',
+                tags: ['Azure AI Foundry', 'AI Agents', 'Prompt Flow', 'RAG', 'Python'],
+                description: 'Enterprise-grade AI agent designed using Azure AI Foundry. Features visual prompt flow orchestration, custom tool calling, model deployment, and RAG grounding on corporate knowledge repositories.',
+                features: [
+                    'Azure AI Foundry visual Prompt Flow design & orchestration',
+                    'RAG grounding over enterprise document repositories',
+                    'Multi-agent task delegation and function calling',
+                    'Enterprise role-based access control and security compliance'
+                ],
+                videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+                linkedinUrl: 'https://www.linkedin.com/in/dhanushs615/'
+            },
+            'sentiment': {
+                title: 'Stock Market Sentiment Analysis & Prediction System',
+                tags: ['Python', 'Machine Learning', 'Pandas', 'Scikit-Learn', 'Financial Datasets'],
+                description: 'Machine learning project extracting real-time financial market sentiment from news feeds and social data, combining NLP indicators with quantitative metrics to forecast stock trends.',
+                features: [
+                    'NLP text sentiment extraction using VADER & transformer embeddings',
+                    'Predictive stock direction classification using Random Forest and XGBoost',
+                    'Pandas & Scikit-Learn data processing pipeline',
+                    'Interactive visualization of sentiment trends vs price action'
+                ],
+                videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
+                linkedinUrl: 'https://www.linkedin.com/in/dhanushs615/'
+            },
+            'mobile-app': {
+                title: 'Network Marketing Mobile App — Production Play Store App',
+                tags: ['Flutter', 'Android', 'REST API', 'Play Store', 'Firebase'],
+                description: 'Full-stack production mobile app available on Google Play Store. Features real-time referral tracking, team hierarchy dashboards, automated commission calculations, and push notifications.',
+                features: [
+                    'Cross-platform Flutter application published on Google Play Store',
+                    'Real-time user team dashboard & commission analytics',
+                    'REST API integration with secure JWT authentication',
+                    'Automated push notifications for order & tier updates'
+                ],
+                videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoylikes.mp4',
+                linkedinUrl: 'https://www.linkedin.com/in/dhanushs615/'
+            },
+            'food-app': {
+                title: 'Full-Stack Food Ordering Platform',
+                tags: ['JavaScript', 'PHP', 'MySQL', 'REST API', 'CSS3'],
+                description: 'Complete web application for food ordering featuring responsive menu browsing, interactive shopping cart, order status tracking, database order persistence, and payment workflow.',
+                features: [
+                    'PHP & MySQL relational database backend architecture',
+                    'Interactive JavaScript shopping cart with dynamic calculations',
+                    'Real-time order status tracking portal',
+                    'Fully responsive design optimized for mobile & desktop'
+                ],
+                videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4',
+                linkedinUrl: 'https://www.linkedin.com/in/dhanushs615/'
+            }
+        };
+
+        var videoModal = document.getElementById('videoDemoModal');
+        var modalCloseBtn = document.getElementById('closeDemoModal');
+        var demoModalBackdrop = document.getElementById('demoModalBackdrop');
+
+        var modalTitle = document.getElementById('modalProjectTitle');
+        var modalTags = document.getElementById('modalProjectTags');
+        var modalDesc = document.getElementById('modalProjectDesc');
+        var modalFeatures = document.getElementById('modalProjectFeatures');
+        var modalLinkedin = document.getElementById('modalLinkedinLink');
+
+        function openVideoModal(projectId) {
+            var data = projectsData[projectId] || projectsData['chatbot'];
+
+            // Set Title & Metadata
+            modalTitle.textContent = data.title;
+            modalDesc.textContent = data.description;
+            if (modalLinkedin) modalLinkedin.href = data.linkedinUrl;
+
+            // Render Tags
+            modalTags.innerHTML = '';
+            data.tags.forEach(function(tag) {
+                var span = document.createElement('span');
+                span.className = 'modal-tag';
+                span.textContent = tag;
+                modalTags.appendChild(span);
+            });
+
+            // Render Features List
+            modalFeatures.innerHTML = '';
+            data.features.forEach(function(feat) {
+                var li = document.createElement('li');
+                li.textContent = feat;
+                modalFeatures.appendChild(li);
+            });
+
+            // Render Video Viewport Content
+            var demoWrapper = document.getElementById('demoVideoWrapper');
+            if (demoWrapper) {
+                if (data.embedUrl) {
+                    demoWrapper.innerHTML = '<iframe class="demo-iframe-element" src="' + data.embedUrl + '" allowfullscreen title="' + data.title + '"></iframe>';
+                } else if (data.videoUrl) {
+                    demoWrapper.innerHTML = '<video id="demoVideoElement" class="demo-video-element" playsinline controls autoplay preload="metadata"><source src="' + data.videoUrl + '" type="video/mp4"></video>';
+                }
+            }
+
+            // Show Popup Overlay with Animation
+            videoModal.classList.add('active');
+            videoModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoModal() {
+            videoModal.classList.remove('active');
+            videoModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            var demoWrapper = document.getElementById('demoVideoWrapper');
+            if (demoWrapper) {
+                demoWrapper.innerHTML = '';
+            }
+        }
+
+        // Attach event listeners to all demo trigger buttons
+        document.querySelectorAll('.trigger-demo-modal').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var projId = this.getAttribute('data-project-id');
+                openVideoModal(projId);
+            });
+        });
+
+        if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeVideoModal);
+        if (demoModalBackdrop) demoModalBackdrop.addEventListener('click', closeVideoModal);
+
+        window.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && videoModal && videoModal.classList.contains('active')) {
+                closeVideoModal();
+            }
         });
     </script>
 </body>
