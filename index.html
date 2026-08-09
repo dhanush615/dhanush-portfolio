@@ -3488,36 +3488,29 @@
         function openVideoModal(projectId) {
             var data = projectsData[projectId] || projectsData['chatbot'];
 
-            // Set Title & Metadata
-            modalTitle.textContent = data.title;
-            modalDesc.textContent = data.description;
+            // Set LinkedIn Post Mockup Caption & Hashtags
+            var mockupText = document.getElementById('liMockupText');
+            if (mockupText) {
+                mockupText.innerHTML = '🚀 <strong>' + data.title + '</strong><br>' + data.description;
+            }
+
+            var mockupTags = document.getElementById('liMockupTags');
+            if (mockupTags) {
+                mockupTags.innerHTML = '';
+                data.tags.forEach(function(tag) {
+                    var span = document.createElement('span');
+                    span.className = 'li-hashtag';
+                    span.textContent = '#' + tag.replace(/\s+/g, '');
+                    mockupTags.appendChild(span);
+                });
+            }
+
             if (modalLinkedin) modalLinkedin.href = data.linkedinUrl;
 
-            // Render Tags
-            modalTags.innerHTML = '';
-            data.tags.forEach(function(tag) {
-                var span = document.createElement('span');
-                span.className = 'modal-tag';
-                span.textContent = tag;
-                modalTags.appendChild(span);
-            });
-
-            // Render Features List
-            modalFeatures.innerHTML = '';
-            data.features.forEach(function(feat) {
-                var li = document.createElement('li');
-                li.textContent = feat;
-                modalFeatures.appendChild(li);
-            });
-
-            // Render Video Viewport Content
+            // Render Pure 16:9 HTML5 Video Player Viewport
             var demoWrapper = document.getElementById('demoVideoWrapper');
             if (demoWrapper) {
-                if (data.embedUrl) {
-                    demoWrapper.innerHTML = '<iframe class="demo-iframe-element" src="' + data.embedUrl + '" allowfullscreen title="' + data.title + '"></iframe>';
-                } else if (data.videoUrl) {
-                    demoWrapper.innerHTML = '<video id="demoVideoElement" class="demo-video-element" playsinline controls autoplay preload="metadata"><source src="' + data.videoUrl + '" type="video/mp4"></video>';
-                }
+                demoWrapper.innerHTML = '<video id="demoVideoElement" class="demo-video-element" playsinline controls autoplay loop preload="metadata"><source src="' + data.videoUrl + '" type="video/mp4"></video>';
             }
 
             // Show Popup Overlay with Animation
